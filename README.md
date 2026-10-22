@@ -13,7 +13,15 @@ There is an old idea that you can read the health of a society from the health o
 1. **Societies that command their written language better should progress faster.**
 2. **If listeners have lost the ability to feel meaning carried by melody alone, popular music should increasingly spell it out in words.** Put simply: more lyrics, less music.
 
-Both ideas come from a philosophical notebook, *Nemo vir est qui mundum non reddat meliorem* ("no one is a man who does not leave the world better"), kept since 2019. This repository turns them into falsifiable predictions, tests them against public data, and reports what survived.
+Both ideas come from a philosophical notebook, *Nemo vir est qui mundum non reddat meliorem* ("no one is a man who does not leave the world better"), kept since 2019. For the second idea, the notebook also named five competing explanations for why songs might carry more words, and we tested each one:
+
+- **Rap.** Hip-hop is music led by poetry: the beat steps back and the words carry the song.
+- **Attention span.** Listeners no longer sit through a long build-up to a climax, so songs get shorter and busier.
+- **Shorter notes.** From classical to jazz to pop to rap, each note has been held for less time, so more syllables fit into every bar. Short notes, on this view, mirror shorter emotional spans.
+- **Dopamine.** Fast, energetic songs give quick rushes, where older, slower songs gave calm.
+- **Loss of meaning.** Listeners can no longer feel meaning through melody, so it has to be stated in words. This is the main hypothesis, and it predicts richer lyrics, not just more of them.
+
+This repository turns all of this into falsifiable predictions, tests them against public data, and reports what survived.
 
 **Read the full paper:** [report/PAPER.md](report/PAPER.md) (renders here on GitHub) or the [typeset PDF](report/Words_Meaning_Progress_paper.pdf), written in *Nature* article format.
 
@@ -28,8 +36,11 @@ We counted every word in every Billboard Year-End Hot 100 song from **three inde
 - **The headline prediction holds.** Post-2010 hits average **409 words** against **267** before 2000, an increase of **53%** (Cohen's *d* = 1.08). All three sources agree, at +43% to +53%.
 - **But the timing is wrong for a post-2010 story.** Words per hit climbed through the 1990s and **peaked in the 2000s at 430**. The 2010s were slightly *lower*. Whatever changed, it changed before smartphones and social media.
 - **Rap explains only about a third.** Hip-hop went from 5% to 25% of hits, yet songs with no hip-hop tag *also* gained 47% more words. Rap changed how everyone sings, not just how often rap charts.
-- **Songs got denser, not longer.** Tracks shortened by 6%, while **words per minute jumped from 68 to 110 (+62%)**. This was the largest effect we measured, and it matches the notebook's own "shorter notes" hypothesis.
-- **More words, less information.** Distinct vocabulary grew by only a third, and lyrics became **14% more repetitive** by a compression measure. Hits now carry more words but less information per word, which is the opposite of "meaning spelled out".
+- **Songs got denser, not longer.** Tracks shortened by 6%, while **words per minute jumped from 68 to 110 (+62%)**. This was the largest effect we measured. It is what the shorter-notes explanation predicts: singers are not holding notes for longer stretches of melody but packing more syllables into every bar, so the words arrive faster than ever.
+- **More words, less information.** If listeners needed meaning stated in words, lyrics should have become richer: more distinct words, more said. Instead, distinct vocabulary grew by only a third while total words grew by half, and lyrics became **14% more repetitive** by a compression measure (repeated text compresses better). Hits now carry more words but less information per word, which is the opposite of what the loss-of-meaning explanation predicts.
+- **More intense, barely faster.** Spotify's energy score rose 15%, but tempo rose only 2%. That is consistent with the dopamine explanation, though chart data cannot measure anyone's brain chemistry.
+
+**Scorecard for the five explanations:** shorter notes, strongly supported; rap, partly supported (about a third of the rise directly, plus its influence on how every genre is sung); dopamine, consistent but untestable here; attention span, weak (songs shortened only 6%, and 1960s hits were shorter still); loss of meaning, contradicted by the rise in repetition.
 
 > Popular music did not become more literal. It became rhythmic speech: more syllables per beat, repeated, delivered with more intensity.
 
@@ -59,7 +70,7 @@ Nothing here proves causation, and nothing ranks languages against each other. L
 
 - **Analysis plan first.** Hypotheses, comparison windows, tests and decision rules were written to [`PREREGISTRATION.md`](PREREGISTRATION.md) before any outcome was computed. Three deviations are disclosed in the paper's Methods section.
 - **Replication built in.** Three independent lyric collections, one shared tokenizer, and bootstrap confidence intervals from 10,000 resamples.
-- **Mechanisms tested, not assumed.** Each rival explanation in the notebook (rap, attention span, shorter notes, dopamine and energy, loss of meaning) was mapped to a measurable quantity.
+- **Mechanisms tested, not assumed.** Each of the five explanations was mapped to something measurable: rap to the share of hits tagged hip-hop, attention span to song duration, shorter notes to words per minute, dopamine to Spotify's energy and tempo scores, and loss of meaning to vocabulary size and repetition.
 
 | | Before 2000 | After 2010 | Change |
 |---|---|---|---|
